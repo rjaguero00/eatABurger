@@ -6,11 +6,11 @@ $(function () {
         event.preventDefault();
 
         var newBurger = {
-            burger_name: $("#burger-input").val().trim(),
+            burger_name: $("#newburger").val().trim(),
             devoured: false
         };
-        $('#burger-input').val('');
-        console.log(newBurger);
+        // $('#newburger').val('');
+        // console.log(newBurger);
 
         // Send the POST request.
         $.ajax("/api/burgers", {

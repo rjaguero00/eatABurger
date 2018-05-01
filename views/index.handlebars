@@ -4,25 +4,34 @@
 
     <div class="row">
         <div class="col-lg-6">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="submit">Sumbit</button>
-                </span>
-            </div>
-            <!-- /input-group -->
+            <form class="create-burger">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Enter Burger Here" id="newburger">
+                    <span class="input-group-btn">
+                        <button class="btn btn-success" type="submit">Sumbit</button>
+                    </span>
+                </div>
+                <!-- /input-group -->
         </div>
-        <!-- /.col-lg-6 -->
     </div>
-    <!-- /.row -->
+    <!-- /.col-lg-6 -->
+</div>
+<!-- /.row -->
 
+<br>
+
+<div class="row">
 
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">Burger's Ordered</h3>
         </div>
         <div class="panel-body">
-            Panel content
+            {{#each burgers}} {{#unless this.devoured}} {{this.id}}. {{this.burger_name}}
+            <span id="right">
+                <button data-id="{{this.id}}" type="button" class="devour-btn btn btn-success btn-xs float-right">Done</button>
+            </span>
+            <hr> {{/unless}} {{/each}}
         </div>
     </div>
 
@@ -31,8 +40,11 @@
             <h3 class="panel-title">Eaten Burgers</h3>
         </div>
         <div class="panel-body">
-            Panel content
+            {{#each burgers}} {{#if this.devoured}}
+            <span id="devoured-item">{{this.id}}. {{this.burger_name}}</span>
+            <hr> {{/if}} {{/each}}
         </div>
     </div>
+</div>
 
 </div>
