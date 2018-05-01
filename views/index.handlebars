@@ -29,7 +29,7 @@
         <div class="panel-body">
             {{#each burgers}} {{#unless this.devoured}} {{this.id}}. {{this.burger_name}}
             <span id="right">
-                <button data-id="{{this.id}}" type="button" class="devour-btn btn btn-success btn-xs float-right">Done</button>
+                <button data-id="{{this.id}}" type="button" class="devour-btn btn btn-success">Done</button>
             </span>
             <hr> {{/unless}} {{/each}}
         </div>
@@ -40,9 +40,7 @@
             <h3 class="panel-title">Eaten Burgers</h3>
         </div>
         <div class="panel-body">
-            {{#each burgers}} {{#if this.devoured}}
-            <span id="devoured-item">{{this.id}}. {{this.burger_name}}</span>
-            <hr> {{/if}} {{/each}}
+
         </div>
     </div>
 </div>
