@@ -4,11 +4,11 @@
 
     <div class="row">
         <div class="col-lg-6">
-            <form class="create-burger">
+            <form class="add-burger">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Enter Burger Here" id="newburger">
                     <span class="input-group-btn">
-                        <button class="btn btn-success" type="submit">Sumbit</button>
+                        <button class="btn btn-success" type="submit">Submit</button>
                     </span>
                 </div>
                 <!-- /input-group -->
@@ -40,7 +40,9 @@
             <h3 class="panel-title">Eaten Burgers</h3>
         </div>
         <div class="panel-body">
-
+            {{#each burgers}} {{#if this.devoured}}
+            <span>{{this.id}}. {{this.burger_name}}</span>
+            <hr> {{/if}} {{/each}}
         </div>
     </div>
 </div>

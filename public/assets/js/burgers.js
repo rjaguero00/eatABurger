@@ -1,7 +1,7 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function () {
 
-    $(".create-burger").on("submit", function (event) {
+    $(".add-burger").on("submit", function (event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
 
@@ -9,8 +9,8 @@ $(function () {
             burger_name: $("#newburger").val().trim(),
             devoured: false
         };
-        // $('#newburger').val('');
-        // console.log(newBurger);
+        $('#newburger').val('');
+        console.log(newBurger);
 
         // Send the POST request.
         $.ajax("/api/burgers", {
