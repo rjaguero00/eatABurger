@@ -7,7 +7,7 @@ $(function () {
 
         var newBurger = {
             burger_name: $("#newburger").val().trim(),
-            devoured: false
+            devoured: 0
         };
         $('#newburger').val('');
         console.log(newBurger);
@@ -30,7 +30,7 @@ $(function () {
         var id = $(this).data("id");
 
         var newBurgerStatus = {
-            devoured: true
+            devoured: 1
         };
 
         // Send the DELETE request.
