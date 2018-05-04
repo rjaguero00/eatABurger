@@ -5,9 +5,12 @@ $(function () {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
 
+        // var newBurger = {
+        //     burger_name: $("#newburger").val().trim(),
+        //     devoured: false
+        // };
         var newBurger = {
-            burger_name: $("#newburger").val().trim(),
-            devoured: 0
+            burger_name: $("#newburger").val().trim()
         };
         $('#newburger').val('');
         console.log(newBurger);
@@ -30,7 +33,7 @@ $(function () {
         var id = $(this).data("id");
 
         var newBurgerStatus = {
-            devoured: 1
+            devoured: true
         };
 
         // Send the DELETE request.

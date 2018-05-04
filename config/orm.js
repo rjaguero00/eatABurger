@@ -53,8 +53,15 @@ var orm = {
     insertOne: function (table, cols, vals, cb) {
         var queryString = "INSERT INTO " + table;
 
+        // queryString += " (";
+        // queryString += cols.toString();
+        // queryString += ") ";
+        // queryString += "VALUES (";
+        // queryString += printQuestionMarks(vals.length);
+        // queryString += ") ";
+
         queryString += " (";
-        queryString += cols.toString();
+        queryString += cols;
         queryString += ") ";
         queryString += "VALUES (";
         queryString += printQuestionMarks(vals.length);
@@ -105,3 +112,4 @@ var orm = {
 
 // Export the orm object for the model (burger.js).
 module.exports = orm;
+

@@ -17,7 +17,11 @@ router.get("/", function (req, res) {
 });
 
 router.post("/api/burgers", function (req, res) {
-    burger.insertOne([req.body.burger_name, req.body.devoured], function (result) {
+    // burger.insertOne([req.body.burger_name, req.body.devoured], function (result) {
+    //     // Send back the ID of the new quote
+    //     res.json({ id: result.insertId });
+    // });
+    burger.insertOne([req.body.burger_name], function (result) {
         // Send back the ID of the new quote
         res.json({ id: result.insertId });
     });
