@@ -1,8 +1,10 @@
-<h1 id="title">eat-A-Burger!</h1>
+<img id="burger-logo" src="/assets/img/burgerlogo.jpg"> {{!--
+
+<h1 id="title">eat-A-Burger!</h1> --}}
 
 <div class="container">
 
-    <div class="row">
+    <div class="row" id="addburger">
         <div class="col-lg-6">
             <form class="add-burger">
                 <div class="form-group">
@@ -16,36 +18,39 @@
         </div>
     </div>
     <!-- /.col-lg-6 -->
-</div>
-<!-- /.row -->
 
-<br>
 
-<div class="row">
+    <br>
 
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">Burger's Ordered</h3>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Burger's Ordered</h3>
+                </div>
+                <div class="panel-body">
+                    {{#each burgers}} {{#unless this.devoured}} {{this.id}}. {{this.burger_name}}
+                    <span id="right">
+                        <button data-id="{{this.id}}" type="button" class="devour-btn btn btn-success">Done</button>
+                    </span>
+                    <hr> {{/unless}} {{/each}}
+                </div>
+            </div>
         </div>
-        <div class="panel-body">
-            {{#each burgers}} {{#unless this.devoured}} {{this.id}}. {{this.burger_name}}
-            <span id="right">
-                <button data-id="{{this.id}}" type="button" class="devour-btn btn btn-success">Done</button>
-            </span>
-            <hr> {{/unless}} {{/each}}
+
+
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Eaten Burgers</h3>
+                </div>
+                <div class="panel-body">
+                    {{#each burgers}} {{#if this.devoured}}
+                    <span>{{this.id}}. {{this.burger_name}}</span>
+                    <hr> {{/if}} {{/each}}
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">Eaten Burgers</h3>
-        </div>
-        <div class="panel-body">
-            {{#each burgers}} {{#if this.devoured}}
-            <span>{{this.id}}. {{this.burger_name}}</span>
-            <hr> {{/if}} {{/each}}
-        </div>
-    </div>
-</div>
 
 </div>
