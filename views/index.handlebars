@@ -5,12 +5,12 @@
 <div class="container">
 
     <div class="row" id="addburger">
-        <div class="col-lg-6">
+        <div class="col-lg-12">
             <form class="add-burger">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Enter Burger Here" id="newburger">
                     <span class="input-group-btn">
-                        <button class="btn btn-success" type="submit">Submit</button>
+                        <button class="btn btn-success" id="buttoncolor" type="submit">Submit</button>
                     </span>
                 </div>
             </form>
@@ -25,13 +25,13 @@
     <div class="row">
         <div class="col-sm-6">
             <div class="panel panel-default">
-                <div class="panel-heading">
+                <div class="panel-heading" id="red">
                     <h3 class="panel-title">Burger's Ordered</h3>
                 </div>
                 <div class="panel-body">
                     {{#each burgers}} {{#unless this.devoured}} {{this.id}}. {{this.burger_name}}
                     <span id="right">
-                        <button data-id="{{this.id}}" type="button" class="devour-btn btn btn-success">Done</button>
+                        <button data-id="{{this.id}}" type="button" id="buttoncolor" class="devour-btn btn btn-success">Done</button>
                     </span>
                     <hr> {{/unless}} {{/each}}
                 </div>
@@ -41,7 +41,7 @@
 
         <div class="col-md-6">
             <div class="panel panel-default">
-                <div class="panel-heading">
+                <div class="panel-heading" id="red">
                     <h3 class="panel-title">Eaten Burgers</h3>
                 </div>
                 <div class="panel-body">
